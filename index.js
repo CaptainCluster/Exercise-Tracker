@@ -158,7 +158,7 @@ async function(req, res)
       description:  newExercise.description,
       duration:     newExercise.duration,
       date:         new Date(newExercise.date).toDateString(),
-      userId:       newExercise.userId
+      _id:          newExercise.userId
     })
   }
   catch(error)
@@ -208,7 +208,6 @@ async function(req, res)
 
     if(newDate["$gte"] || newDate["$lte"])
     {
-      console.log("wee")
       findCondition = {
         userId: req.params._id,
         date: newDate
